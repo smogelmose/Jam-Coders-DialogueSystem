@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: "Assets/Scenes/V\xE6gt Scenes/V\xE6gt 1.unity"
     guid: 41a53498f4a79f646bb094e056478d9b
+  - enabled: 1
+    path: "Assets/Scenes/V\xE6gt Scenes/V\xE6gt 2.unity"
+    guid: ed20985d6d104144c8ae380488510a29
   m_configObjects: {}
