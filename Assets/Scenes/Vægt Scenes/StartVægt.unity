@@ -251,7 +251,7 @@ GameObject:
   - component: {fileID: 605014494}
   - component: {fileID: 605014493}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Bear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -550,7 +550,7 @@ GameObject:
   - component: {fileID: 778631519}
   - component: {fileID: 778631518}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Bubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -737,7 +737,7 @@ GameObject:
   - component: {fileID: 1606184039}
   - component: {fileID: 1606184038}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

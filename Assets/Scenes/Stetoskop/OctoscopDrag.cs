@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
-public class StetoskopDrag : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
+public class OctoscopDrag : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
     public RectTransform SnapOnCorrect;
     public float SnapPossition = 5f;
@@ -42,7 +42,7 @@ public class StetoskopDrag : MonoBehaviour, IDragHandler, IBeginDragHandler, IEn
         {
             TransformerMode.anchoredPosition = SnapOnCorrect.anchoredPosition;
             
-            SceneManager.LoadScene("Scenes/Stetoskop/Lungs");
+            SceneManager.LoadScene(13);
             
         }
     }

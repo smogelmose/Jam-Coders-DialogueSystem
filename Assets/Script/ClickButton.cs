@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEditor.Build.Content;
+using JetBrains.Annotations;
 
 public class ClickButton : MonoBehaviour,IPointerDownHandler,IPointerUpHandler
 {
@@ -23,6 +24,6 @@ public class ClickButton : MonoBehaviour,IPointerDownHandler,IPointerUpHandler
     {
         _img.sprite = _default;
         _source.PlayOneShot(_uncompressedClip);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(1); 
     }
 }

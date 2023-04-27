@@ -9,6 +9,7 @@ public class Moveable : MonoBehaviour
     public float temp = 0;
     public Slider slider;
     private string sceneName;
+    public int MaxArrow = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -27,14 +28,14 @@ public class Moveable : MonoBehaviour
         float delta = Mathf.Abs(value -temp);
         if (temp > value)
         {
-            transform.position += Vector3.down * delta * 1500;
+            transform.position += Vector3.down * delta * MaxArrow;
         }
-        else transform.position += Vector3.up * delta * 1500;
+        else transform.position += Vector3.up * delta * MaxArrow;
 
         temp = value;
         if (value == 1)
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(10);
         }
     }
 

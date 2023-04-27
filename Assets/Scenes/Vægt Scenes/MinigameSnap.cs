@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEditor.VersionControl;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -10,7 +11,6 @@ public class MinigameSnap : MonoBehaviour
     public RectTransform SnapOnCorrect;
     public float SnapPossition = 5f;
     private RectTransform TransformerMode;
-
     private void Start()
     {
         TransformerMode = GetComponent<RectTransform>();
@@ -25,6 +25,8 @@ public class MinigameSnap : MonoBehaviour
         if (distance <= SnapPossition)
         {
             TransformerMode.anchoredPosition = SnapOnCorrect.anchoredPosition;
+
+            SceneManager.LoadScene(17);
         }
     }
 }
