@@ -11,7 +11,7 @@ public class Clicknext1 : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
-            SceneManager.LoadScene("Scenes/Vægt Scenes/Vægt 2");
+            SceneManager.LoadScene("GetActiveScene"+1);
         }
     }
 }
