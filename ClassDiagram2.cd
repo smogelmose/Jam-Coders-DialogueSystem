@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Clicknext" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>Assets\Scenes\Vægt Scenes\Clicknext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GyroMovement" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAIAAAQAAEAACAAAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scenes\Vægt Scenes\GyroMovement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MinigameSnap" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAABAABAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scenes\Vægt Scenes\MinigameSnap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SnapOn" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAACAAAAAAABBAFAACAAAAACAAAAAAABAAQAA=</HashCode>
+      <FileName>Assets\Scenes\Vægt Scenes\SnapOn.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ClickButton" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABCAAAAAAEAIAAAAAAAAAAAAAAAAAQAQAAAAAgAABAA=</HashCode>
+      <FileName>Assets\Script\ClickButton.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DialogueManager" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAQAACABAAAAAEAAAAAAAAIAAAAACABAAAABAAA=</HashCode>
+      <FileName>Assets\Script\DialogueManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MenuManager" Collapsed="true">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Script\MenuManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Moveable" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAASACAAAAAAAgAAAAAAAAAACAAAAEAAAAAAA=</HashCode>
+      <FileName>Assets\Script\Moveable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Scroller" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAIAAQAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Assets\Script\Scroller.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StetoskopDrag1" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAACAAAAAAABBAFAACAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scenes\Stetoskop\StetoskopDrag1.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="OctoscopDrag" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAACAAAAAAABBAFAACAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scenes\Stetoskop\OctoscopDrag.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
