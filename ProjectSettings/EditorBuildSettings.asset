@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: "Assets/Scenes/H\xF8jde.unity"
     guid: 865e3e935c671e749836163e0751ac7c
   - enabled: 1
-    path: "Assets/Scenes/\xD8re-check Scenes/\xD8re-check.unity"
+    path: Assets/Scenes/Otoscope/Otoscope.unity
     guid: d6f8821f43c919045b81006a0e442663
   - enabled: 1
     path: Assets/Scenes/Syringe/Syringe 1.unity
@@ -35,7 +35,5 @@ EditorBuildSettings:
   - enabled: 1
     path: "Assets/Scenes/V\xE6gt Scenes/V\xE6gt 2.unity"
     guid: ed20985d6d104144c8ae380488510a29
-  - enabled: 1
-    path: Assets/Scenes/Stetoskop/Lungs.unity
-    guid: ae6cdb999dd9e9e44b881487e92af3f6
+ 7b03927e0a3e557201b3d2548b1c3d01fb4e21e5
   m_configObjects: {}
