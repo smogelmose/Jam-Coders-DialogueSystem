@@ -9,7 +9,7 @@ public class Clicknext : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0)) // 
         {
             SceneManager.LoadScene("Scenes/Vægt Scenes/Vægt 1");
         }

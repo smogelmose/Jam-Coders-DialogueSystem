@@ -17,9 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: "Assets/Scenes/H\xF8jde.unity"
     guid: 865e3e935c671e749836163e0751ac7c
-  - enabled: 0
-    path: Assets/Scenes/Stetoskop.unity
-    guid: ea5151f0345966d4198ac77f0f5e0741
   - enabled: 1
     path: "Assets/Scenes/\xD8re-check Scenes/\xD8re-check.unity"
     guid: d6f8821f43c919045b81006a0e442663
@@ -38,5 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: "Assets/Scenes/V\xE6gt Scenes/V\xE6gt 2.unity"
     guid: ed20985d6d104144c8ae380488510a29
-6a84030ec98b9915c58ba28b4b03e84f852998eb
+  - enabled: 1
+    path: Assets/Scenes/Stetoskop/Lungs.unity
+    guid: ae6cdb999dd9e9e44b881487e92af3f6
   m_configObjects: {}

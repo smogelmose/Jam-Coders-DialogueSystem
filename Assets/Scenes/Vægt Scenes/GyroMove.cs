@@ -7,6 +7,8 @@ public class GyroMove : MonoBehaviour
     private Gyroscope gyro;
     private bool gyroSupported;
     private Quaternion rotFix;
+    public Quaternion Gamer = new Quaternion (0f, 0f, 1f, 0f);
+    public Quaternion Gamers = new Quaternion(0f, 0f, 0f, 1f);
 
     void Start()
     {
@@ -19,10 +21,10 @@ public class GyroMove : MonoBehaviour
 
             // Set the rotation fix to take into account the screen orientation of the device
             if (Screen.orientation == ScreenOrientation.LandscapeLeft)
-                rotFix = new Quaternion(0f, 0f, 1f, 0f);
+                rotFix = Gamer;
 
             if (Screen.orientation == ScreenOrientation.Portrait)
-                rotFix = new Quaternion(0f, 0f, 0f, 1f);
+                rotFix = Gamers;
 
             // Make the image the child of the camera so it moves with it
             transform.parent = Camera.main.transform;

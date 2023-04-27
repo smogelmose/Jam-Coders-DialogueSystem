@@ -9,6 +9,8 @@ public class SnapOn : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHa
 {
     public RectTransform SnapOnCorrect;
     public float SnapPossition = 5f;
+    public float NoMagic = .6f;
+    public float NoMagic2 = 1f;
 
     private RectTransform TransformerMode;
     private CanvasGroup Group;
@@ -21,7 +23,7 @@ public class SnapOn : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHa
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        Group.alpha = .6f;
+        Group.alpha = NoMagic;
         Group.blocksRaycasts = true;
     }
 
@@ -32,7 +34,7 @@ public class SnapOn : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHa
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        Group.alpha = 1f;
+        Group.alpha = NoMagic2;
 
         // Calculate the distance between the dropped position and the correct position
         float Possition = Vector2.Distance(TransformerMode.anchoredPosition, SnapOnCorrect.anchoredPosition);
