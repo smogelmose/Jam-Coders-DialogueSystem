@@ -24,7 +24,10 @@ EditorBuildSettings:
     path: Assets/Scenes/Otoscope/Otoscope.unity
     guid: d6f8821f43c919045b81006a0e442663
   - enabled: 1
-    path: Assets/Scenes/Syringe.unity
+    path: Assets/Scenes/Syringe/Syringe 1.unity
+    guid: d3a875609778691429d8f7b92f1c1ad4
+  - enabled: 1
+    path: Assets/Scenes/Syringe/Syringe.unity
     guid: 168fb8c4596a37b4f84bd52f86bbc8f3
   - enabled: 1
     path: "Assets/Scenes/V\xE6gt Scenes/V\xE6gt 3.unity"
@@ -33,6 +36,7 @@ EditorBuildSettings:
     path: "Assets/Scenes/V\xE6gt Scenes/V\xE6gt 1.unity"
     guid: 41a53498f4a79f646bb094e056478d9b
   - enabled: 1
-    path: Assets/Scenes/Stetoskop/Lungs.unity
-    guid: ae6cdb999dd9e9e44b881487e92af3f6
+    path: "Assets/Scenes/V\xE6gt Scenes/V\xE6gt 2.unity"
+    guid: ed20985d6d104144c8ae380488510a29
+6a84030ec98b9915c58ba28b4b03e84f852998eb
   m_configObjects: {}
