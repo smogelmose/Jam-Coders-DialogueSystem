@@ -7,6 +7,7 @@ public class GyroMovement : MonoBehaviour
     private bool gyroEnabled;
     private Gyroscope gyro;
     private Quaternion rot;
+    public Quaternion Rotation = new Quaternion(0, 0, 1, 0);
 
     private void Start()
     {
@@ -20,7 +21,7 @@ public class GyroMovement : MonoBehaviour
             gyro = Input.gyro;
             gyro.enabled = true;
 
-            rot = new Quaternion(0, 0, 1, 0);
+            rot = Rotation;
 
             return true;
         }
@@ -31,11 +32,7 @@ public class GyroMovement : MonoBehaviour
     {
         if (gyroEnabled)
         {
-            Vector3 gyroInput = -gyro.attitude.eulerAngles;
-            gyroInput.z = 0f;
-            transform.eulerAngles = gyroInput;
-
-            Vector3 direction = new Vector3(Input.acceleration.x, Input.acceleration.y, 0f);
+            Vector2 direction = new Vector2(Input.acceleration.x, Input.acceleration.y);
             float acceleration = 0.5f;
             transform.Translate(direction * acceleration);
         }
