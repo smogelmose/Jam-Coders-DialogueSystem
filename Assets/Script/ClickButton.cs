@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using UnityEditor.Build.Content;
 using JetBrains.Annotations;
 
 public class ClickButton : MonoBehaviour,IPointerDownHandler,IPointerUpHandler
