@@ -217,6 +217,7 @@ RectTransform:
   m_Children:
   - {fileID: 1520940273}
   - {fileID: 286965832}
+  - {fileID: 1995664045}
   - {fileID: 182419509}
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -258,9 +259,8 @@ RectTransform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1700878679}
-  - {fileID: 1995664045}
   m_Father: {fileID: 31838587}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -281,9 +281,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 1700878680}
   lines:
-  - 'Hi there! '
-  - Welcome to the Care Bear Doctor!
-  - Will you help me with my examination?
+  - Hello I'm Doctor Bear.
+  - I'm here today to show you how to do a doctor's exam.
+  - Will you help me?
   - Great!
   textSpeed: 0.1
 --- !u!114 &182419511
@@ -359,8 +359,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -463.19995, y: 189.59998}
-  m_SizeDelta: {x: 100, y: 206.7915}
+  m_AnchoredPosition: {x: -424, y: 189.59998}
+  m_SizeDelta: {x: 111.796, y: 206.792}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &286965833
 MonoBehaviour:
@@ -571,7 +571,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 750350556}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 278, y: 203, z: -997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -816,15 +816,15 @@ RectTransform:
   m_GameObject: {fileID: 1995664044}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.3999999, y: 2.3999999, z: 2.3999999}
+  m_LocalScale: {x: 2.4, y: 2.4, z: 2.4}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 182419509}
-  m_RootOrder: 1
+  m_Father: {fileID: 31838587}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 926, y: -553.8}
+  m_AnchoredPosition: {x: 599.9999, y: -232.79999}
   m_SizeDelta: {x: 128, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1995664046
