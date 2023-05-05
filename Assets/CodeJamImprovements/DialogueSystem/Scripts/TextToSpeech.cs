@@ -14,6 +14,9 @@ public class TextToSpeech : MonoBehaviour
 {
     [SerializeField] private AudioSource audioSource;
 
+    public DialogueManager dialogueManager; // Reference to DialogueManager text lines.
+
+
     // Start is called before the first frame update
     private async void Start() // private async for handling awaitable tasks.
     {
@@ -28,7 +31,7 @@ public class TextToSpeech : MonoBehaviour
 
         var request = new SynthesizeSpeechRequest() // Sets initial values from Amazon Polly UI options.
         {
-            Text = "Testing, testing testing",
+            Text = dialogueManager.lines[0], // Reference to DialogueManager lines.
             Engine = Engine.Neural, // Uses Amazon Polly Neural TTS system that uses concatenative synthesis of the phonemes of recorded speech, producing very natural-sounding synthesized speech. 
             VoiceId = VoiceId.Justin, // Uses the NTTS child voiceId Justin 
             OutputFormat = OutputFormat.Mp3 // Outputs the audio in MP3 format.
