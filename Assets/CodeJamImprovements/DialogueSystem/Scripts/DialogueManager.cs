@@ -15,9 +15,6 @@ public class DialogueManager : MonoBehaviour
     private int index;
 
 
-    //public Queue sentences; // FIFO
-
-
     // Start is called before the first frame update
     void Start()
     {
