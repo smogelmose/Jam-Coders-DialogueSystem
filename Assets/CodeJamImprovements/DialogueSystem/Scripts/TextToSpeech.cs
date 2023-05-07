@@ -93,3 +93,5 @@ public class TextToSpeech : MonoBehaviour
         }
     }
 }
+
+// Inspired by https://www.youtube.com/watch?v=rdHqRRzltTo&list=PLCDqd_BDUOne2-xb6PtOGhhNA8Qoh1G4V&index=8

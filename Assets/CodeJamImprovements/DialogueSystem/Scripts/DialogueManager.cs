@@ -100,3 +100,5 @@ public class DialogueManager : MonoBehaviour
         Debug.Log("Text loaded successfully: " + string.Join("\n", lines));
     }
 }
+
+// Inspired by https://www.youtube.com/watch?v=8oTYabhj248&list=PLCDqd_BDUOne2-xb6PtOGhhNA8Qoh1G4V&index=7
