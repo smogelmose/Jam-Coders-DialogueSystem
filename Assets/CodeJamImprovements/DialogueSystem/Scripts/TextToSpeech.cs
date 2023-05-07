@@ -12,15 +12,15 @@ using TMPro;
 
 public class TextToSpeech : MonoBehaviour
 {
-    [SerializeField] private AudioSource audioSource;
-    private DialogueManager dialogueManager;
+    [SerializeField] private AudioSource audioSource; // Audio source for playing synthesized speech.
+    private DialogueManager dialogueManager; // Reference to the DialogueManager component.
 
     // Start is called before the first frame update
     private async void Start()
     {
         if (dialogueManager == null)
         {
-            dialogueManager = FindObjectOfType<DialogueManager>();
+            dialogueManager = FindObjectOfType<DialogueManager>(); // Find the DialogueManager component in the scene.
         }
 
         if (dialogueManager == null)
@@ -29,7 +29,7 @@ public class TextToSpeech : MonoBehaviour
             return;
         }
 
-        var lines = dialogueManager.lines;
+        var lines = dialogueManager.lines; // Get the dialogue lines from the DialogueManager.
 
         if (lines == null || lines.Length == 0)
         {
@@ -37,43 +37,43 @@ public class TextToSpeech : MonoBehaviour
             return;
         }
 
-        var credentials = new BasicAWSCredentials("xxx", "xxx");
-        var client = new AmazonPollyClient(credentials, RegionEndpoint.EUCentral1);
+        var credentials = new BasicAWSCredentials("xxx", "xxx"); // Replace with your own AWS credentials.
+        var client = new AmazonPollyClient(credentials, RegionEndpoint.EUCentral1); // Create an Amazon Polly client.
 
-        foreach (var line in lines)
+        foreach (var line in lines) // Loop over each line of dialogue.
         {
-            var text = line.Trim();
+            var text = line.Trim(); // Trim whitespace from the line of dialogue.
 
             if (string.IsNullOrEmpty(text))
             {
                 Debug.LogWarning("Skipping empty line.");
-                continue;
+                continue; // Skip empty lines.
             }
 
             var request = new SynthesizeSpeechRequest()
             {
                 Text = text,
-                Engine = Engine.Neural,
-                VoiceId = VoiceId.Justin,
-                OutputFormat = OutputFormat.Mp3
+                Engine = Engine.Neural, // Use the neural text-to-speech engine.
+                VoiceId = VoiceId.Justin, // Use the "Justin" voice.
+                OutputFormat = OutputFormat.Mp3 // Synthesize speech as an MP3 file.
             };
 
-            var response = await client.SynthesizeSpeechAsync(request);
+            var response = await client.SynthesizeSpeechAsync(request); // Call the Amazon Polly API to synthesize speech from the text.
 
-            WriteIntoFile(response.AudioStream);
+            WriteIntoFile(response.AudioStream); // Write the synthesized speech to a file.
 
             using (var www = UnityWebRequestMultimedia.GetAudioClip("file://" + Path.Combine(Application.temporaryCachePath, "audio.mp3"), AudioType.MPEG))
             {
                 var op = www.SendWebRequest();
 
-                while (!op.isDone) await Task.Yield();
+                while (!op.isDone) await Task.Yield(); // Wait for the audio clip to finish downloading.
 
-                var clip = DownloadHandlerAudioClip.GetContent(www);
+                var clip = DownloadHandlerAudioClip.GetContent(www); // Get the downloaded audio clip.
 
-                audioSource.clip = clip;
-                audioSource.Play();
+                audioSource.clip = clip; // Assign the downloaded audio clip to the audio source.
+                audioSource.Play(); // Play the synthesized speech.
 
-                while (audioSource.isPlaying) await Task.Yield();
+                while (audioSource.isPlaying) await Task.Yield(); // Wait for the speech to finish playing.
             }
         }
     }
@@ -88,7 +88,7 @@ public class TextToSpeech : MonoBehaviour
 
             while ((bytesRead = stream.Read(buffer, 0, buffer.Length)) > 0)
             {
-                fileStream.Write(buffer, 0, bytesRead);
+                fileStream.Write(buffer, 0, bytesRead); // Write the synthesized speech to a file.
             }
         }
     }
