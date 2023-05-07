@@ -5,22 +5,17 @@ using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
-
-    public TextMeshProUGUI textComponent; //
-
+    public TextMeshProUGUI textComponent;
     public string[] lines;
-
     public float textSpeed;
-
     private int index;
-
+    public string charArray;
 
     // Start is called before the first frame update
     void Start()
     {
         textComponent.text = string.Empty;
         StartDialogue();
-
     }
 
     void Update()
@@ -43,14 +38,12 @@ public class DialogueManager : MonoBehaviour
     {
         index = 0;
         StartCoroutine(TypeLine());
-
     }
 
     IEnumerator TypeLine()
     {
         // Type 1 by 1
-        foreach(char c in lines[index].ToCharArray())
-
+        foreach (char c in lines[index].ToCharArray())
         {
             textComponent.text += c;
             yield return new WaitForSeconds(textSpeed);
@@ -59,7 +52,7 @@ public class DialogueManager : MonoBehaviour
 
     void NextLine()
     {
-        if (index < lines.Length - 1)
+        if (index < lines.Length - 1)
         {
             index++;
             textComponent.text = string.Empty;
@@ -69,9 +62,11 @@ public class DialogueManager : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
-
     }
 
+    private void Awake()
+    {
+        lines = new string[] { "This is the first line", "This is the second line", "This is the third line" };
+        Debug.Log("Text loaded successfully: " + string.Join("\n", lines));
+    }
 }
-
-// Inspired by https://www.youtube.com/watch?v=8oTYabhj248&list=PLCDqd_BDUOne2-xb6PtOGhhNA8Qoh1G4V&index=7
