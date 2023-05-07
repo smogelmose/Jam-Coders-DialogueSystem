@@ -9,7 +9,6 @@ public class DialogueManager : MonoBehaviour
     public string[] lines;
     public float textSpeed;
     private int index;
-    public string charArray;
 
     // Start is called before the first frame update
     void Start()
@@ -20,13 +19,16 @@ public class DialogueManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (textComponent.text == lines[index])
         {
-            if (textComponent.text == lines[index])
+            if (Input.GetMouseButtonDown(0))
             {
                 NextLine();
             }
-            else
+        }
+        else
+        {
+            if (Input.GetMouseButtonDown(0))
             {
                 StopAllCoroutines();
                 textComponent.text = lines[index];
@@ -66,7 +68,7 @@ public class DialogueManager : MonoBehaviour
 
     private void Awake()
     {
-        lines = new string[] { "This is the first line", "This is the second line", "This is the third line" };
+        lines = new string[] { "Hello I'm Doctor Bear.", "I'm here today to show you how to do a doctor's exam.", "Will you help me?", " Great!"};
         Debug.Log("Text loaded successfully: " + string.Join("\n", lines));
     }
 }

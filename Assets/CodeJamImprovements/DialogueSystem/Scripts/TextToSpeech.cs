@@ -13,7 +13,7 @@ using TMPro;
 public class TextToSpeech : MonoBehaviour
 {
     [SerializeField] private AudioSource audioSource;
-    [SerializeField] private DialogueManager dialogueManager;
+    private DialogueManager dialogueManager;
 
     // Start is called before the first frame update
     private async void Start()
@@ -37,45 +37,50 @@ public class TextToSpeech : MonoBehaviour
             return;
         }
 
-        var text = lines[0].Trim();
-
-        if (string.IsNullOrEmpty(text))
-        {
-            Debug.LogError("Input text is empty or null.");
-            return;
-        }
-
         var credentials = new BasicAWSCredentials("xxx", "xxx");
         var client = new AmazonPollyClient(credentials, RegionEndpoint.EUCentral1);
 
-        var request = new SynthesizeSpeechRequest()
+        foreach (var line in lines)
         {
-            Text = text,
-            Engine = Engine.Neural,
-            VoiceId = VoiceId.Justin,
-            OutputFormat = OutputFormat.Mp3
-        };
+            var text = line.Trim();
 
-        var response = await client.SynthesizeSpeechAsync(request);
+            if (string.IsNullOrEmpty(text))
+            {
+                Debug.LogWarning("Skipping empty line.");
+                continue;
+            }
 
-        WriteIntoFile(response.AudioStream);
+            var request = new SynthesizeSpeechRequest()
+            {
+                Text = text,
+                Engine = Engine.Neural,
+                VoiceId = VoiceId.Justin,
+                OutputFormat = OutputFormat.Mp3
+            };
 
-        using (var www = UnityWebRequestMultimedia.GetAudioClip($"{Application.persistentDataPath}/audio.mp3", AudioType.MPEG))
-        {
-            var op = www.SendWebRequest();
+            var response = await client.SynthesizeSpeechAsync(request);
 
-            while (!op.isDone) await Task.Yield();
+            WriteIntoFile(response.AudioStream);
 
-            var clip = DownloadHandlerAudioClip.GetContent(www);
+            using (var www = UnityWebRequestMultimedia.GetAudioClip("file://" + Path.Combine(Application.temporaryCachePath, "audio.mp3"), AudioType.MPEG))
+            {
+                var op = www.SendWebRequest();
 
-            audioSource.clip = clip;
-            audioSource.Play();
+                while (!op.isDone) await Task.Yield();
+
+                var clip = DownloadHandlerAudioClip.GetContent(www);
+
+                audioSource.clip = clip;
+                audioSource.Play();
+
+                while (audioSource.isPlaying) await Task.Yield();
+            }
         }
     }
 
     private void WriteIntoFile(Stream stream)
     {
-        using (var fileStream = new FileStream($"{Application.persistentDataPath}/audio.mp3", FileMode.Create))
+        using (var fileStream = new FileStream(Path.Combine(Application.temporaryCachePath, "audio.mp3"), FileMode.Create))
         {
             byte[] buffer = new byte[8 * 1024];
 
