@@ -66,9 +66,16 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    private void Awake()
+    void Awake() // this point the text lines input in DialogueBox script component to the Bear.txt file for text to speech synthesization w. Amazon Polly.
     {
-        lines = new string[] { "Hello I'm Doctor Bear.", "I'm here today to show you how to do a doctor's exam.", "Will you help me?", " Great!"};
+        var textAsset = Resources.Load<TextAsset>("Bear");
+        if (textAsset == null)
+        {
+            Debug.LogError("Failed to load dialogue from resources.");
+            return;
+        }
+        lines = textAsset.text.Split('\n');
         Debug.Log("Text loaded successfully: " + string.Join("\n", lines));
     }
+
 }
