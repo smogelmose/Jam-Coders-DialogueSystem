@@ -1,48 +1,49 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
-public class StetoskopDrag1 : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
+namespace Scenes.Stetoskop
 {
-    public RectTransform SnapOnCorrect;
-    public float SnapPossition = 5f;
-
-    private RectTransform TransformerMode;
-    private CanvasGroup Group;
-
-    private void Start ()
+    public class StetoskopDrag1 : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
     {
-        TransformerMode = GetComponent<RectTransform>();
-        Group = GetComponent<CanvasGroup>();
-    }
+        public RectTransform SnapOnCorrect;
+        public float SnapPossition = 5f;
 
-    public void OnBeginDrag(PointerEventData eventData)
-    {
-        Group.alpha = .6f;
-        Group.blocksRaycasts = true;
-    }
+        private RectTransform TransformerMode;
+        private CanvasGroup Group;
 
-    public void OnDrag(PointerEventData eventData)
-    {
-        TransformerMode.anchoredPosition += eventData.delta;
-    }
-
-    public void OnEndDrag(PointerEventData eventData)
-    {
-        Group.alpha = 1f;
-
-        // Calculate the distance between the dropped position and the correct position
-        float Possition = Vector2.Distance(TransformerMode.anchoredPosition, SnapOnCorrect.anchoredPosition);
-
-        // If the distance is within the snap distance, snap the image to the correct position
-        if (Possition <= SnapPossition)
+        private void Start ()
         {
-            TransformerMode.anchoredPosition = SnapOnCorrect.anchoredPosition;
+            TransformerMode = GetComponent<RectTransform>();
+            Group = GetComponent<CanvasGroup>();
+        }
+
+        public void OnBeginDrag(PointerEventData eventData)
+        {
+            Group.alpha = .6f;
+            Group.blocksRaycasts = true;
+        }
+
+        public void OnDrag(PointerEventData eventData)
+        {
+            TransformerMode.anchoredPosition += eventData.delta;
+        }
+
+        public void OnEndDrag(PointerEventData eventData)
+        {
+            Group.alpha = 1f;
+
+            // Calculate the distance between the dropped position and the correct position
+            float Possition = Vector2.Distance(TransformerMode.anchoredPosition, SnapOnCorrect.anchoredPosition);
+
+            // If the distance is within the snap distance, snap the image to the correct position
+            if (Possition <= SnapPossition)
+            {
+                TransformerMode.anchoredPosition = SnapOnCorrect.anchoredPosition;
             
-            SceneManager.LoadScene("Scenes/Stetoskop/Lungs");
+                SceneManager.LoadScene("Scenes/Stetoskop/Lungs");
             
+            }
         }
     }
 }

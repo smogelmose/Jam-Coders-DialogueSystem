@@ -1,47 +1,47 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Security.Permissions;
 using UnityEngine;
 
-public class SoundManager : MonoBehaviour
+namespace Script.SoundManagerScripts
 {
-    public static SoundManager instance;
-
-    [SerializeField] private AudioSource _musicSource, _effectsSource, _pickupSource;
-
-    void Awake()
+    public class SoundManager : MonoBehaviour
     {
-        if (instance== null)
+        public static SoundManager instance;
+
+        [SerializeField] private AudioSource _musicSource, _effectsSource, _pickupSource;
+
+        void Awake()
         {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
+            if (instance== null)
+            {
+                instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
-        else
+        public void PlaySound(AudioClip clip)
         {
-            Destroy(gameObject);
+            _effectsSource.PlayOneShot(clip);
         }
-    }
-    public void PlaySound(AudioClip clip)
-    {
-        _effectsSource.PlayOneShot(clip);
-    }
 
-    public void PlaySound1(AudioClip clip)
-    {
-        _pickupSource.PlayOneShot(clip);
-    }
+        public void PlaySound1(AudioClip clip)
+        {
+            _pickupSource.PlayOneShot(clip);
+        }
 
-    public void ChangeMasterVolume(float value)
-    {
-        AudioListener.volume = value;
-    }
+        public void ChangeMasterVolume(float value)
+        {
+            AudioListener.volume = value;
+        }
 
-    public void ToggleEffects()
-    {
-        _effectsSource.mute = !_effectsSource.mute;
-    }
-    public void ToggleMusic()
-    {
-        _musicSource.mute = !_musicSource.mute;
+        public void ToggleEffects()
+        {
+            _effectsSource.mute = !_effectsSource.mute;
+        }
+        public void ToggleMusic()
+        {
+            _musicSource.mute = !_musicSource.mute;
+        }
     }
 }

@@ -1,49 +1,50 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
-public class SnapOn : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
+namespace Scenes.Vægt_Scenes
 {
-    public RectTransform SnapOnCorrect;
-    public float SnapPossition = 5f;
-    public float NoMagic = .6f;
-    public float NoMagic2 = 1f;
-
-    private RectTransform TransformerMode;
-    private CanvasGroup Group;
-
-    private void Start ()
+    public class SnapOn : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
     {
-        TransformerMode = GetComponent<RectTransform>();
-        Group = GetComponent<CanvasGroup>();
-    }
+        public RectTransform SnapOnCorrect;
+        public float SnapPossition = 5f;
+        public float NoMagic = .6f;
+        public float NoMagic2 = 1f;
 
-    public void OnBeginDrag(PointerEventData eventData)
-    {
-        Group.alpha = NoMagic;
-        Group.blocksRaycasts = true;
-    }
+        private RectTransform TransformerMode;
+        private CanvasGroup Group;
 
-    public void OnDrag(PointerEventData eventData)
-    {
-        TransformerMode.anchoredPosition += eventData.delta;
-    }
-
-    public void OnEndDrag(PointerEventData eventData)
-    {
-        Group.alpha = NoMagic2;
-
-        // Calculate the distance between the dropped position and the correct position
-        float Possition = Vector2.Distance(TransformerMode.anchoredPosition, SnapOnCorrect.anchoredPosition);
-
-        // If the distance is within the snap distance, snap the image to the correct position
-        if (Possition <= SnapPossition)
+        private void Start ()
         {
-            TransformerMode.anchoredPosition = SnapOnCorrect.anchoredPosition;
+            TransformerMode = GetComponent<RectTransform>();
+            Group = GetComponent<CanvasGroup>();
+        }
 
-            SceneManager.LoadScene(7);
+        public void OnBeginDrag(PointerEventData eventData)
+        {
+            Group.alpha = NoMagic;
+            Group.blocksRaycasts = true;
+        }
+
+        public void OnDrag(PointerEventData eventData)
+        {
+            TransformerMode.anchoredPosition += eventData.delta;
+        }
+
+        public void OnEndDrag(PointerEventData eventData)
+        {
+            Group.alpha = NoMagic2;
+
+            // Calculate the distance between the dropped position and the correct position
+            float Possition = Vector2.Distance(TransformerMode.anchoredPosition, SnapOnCorrect.anchoredPosition);
+
+            // If the distance is within the snap distance, snap the image to the correct position
+            if (Possition <= SnapPossition)
+            {
+                TransformerMode.anchoredPosition = SnapOnCorrect.anchoredPosition;
+
+                SceneManager.LoadScene(7);
             }
         }
     }
+}

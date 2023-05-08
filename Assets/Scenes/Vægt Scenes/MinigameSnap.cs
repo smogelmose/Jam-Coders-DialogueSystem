@@ -1,31 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Threading;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
-public class MinigameSnap : MonoBehaviour
+namespace Scenes.Vægt_Scenes
 {
-    public RectTransform SnapOnCorrect;
-    public float SnapPossition = 5f;
-    private RectTransform TransformerMode;
-    private void Start()
+    public class MinigameSnap : MonoBehaviour
     {
-        TransformerMode = GetComponent<RectTransform>();
-    }
-
-    private void Update()
-    {
-        // Calculate the distance between the current position and the correct position
-        float distance = Vector2.Distance(TransformerMode.anchoredPosition, SnapOnCorrect.anchoredPosition);
-
-        // If the distance is within the snap distance, snap the image to the correct position
-        if (distance <= SnapPossition)
+        public RectTransform SnapOnCorrect;
+        public float SnapPossition = 5f;
+        private RectTransform TransformerMode;
+        private void Start()
         {
-            TransformerMode.anchoredPosition = SnapOnCorrect.anchoredPosition;
+            TransformerMode = GetComponent<RectTransform>();
+        }
 
-            SceneManager.LoadScene(17);
+        private void Update()
+        {
+            // Calculate the distance between the current position and the correct position
+            float distance = Vector2.Distance(TransformerMode.anchoredPosition, SnapOnCorrect.anchoredPosition);
+
+            // If the distance is within the snap distance, snap the image to the correct position
+            if (distance <= SnapPossition)
+            {
+                TransformerMode.anchoredPosition = SnapOnCorrect.anchoredPosition;
+
+                SceneManager.LoadScene(17);
+            }
         }
     }
 }

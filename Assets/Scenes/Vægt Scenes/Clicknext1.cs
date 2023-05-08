@@ -1,17 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement; 
+using UnityEngine.SceneManagement;
 
-public class Clicknext1 : MonoBehaviour
+namespace Scenes.Vægt_Scenes
 {
-
-    // Update is called once per frame
-    void Update()
+    public class Clicknext1 : MonoBehaviour
     {
-        if (Input.GetMouseButton(0))
+
+        // Update is called once per frame
+        void Update()
         {
-            SceneManager.LoadScene("GetActiveScene"+1);
+            if (Input.GetMouseButton(0))
+            {
+                SceneManager.LoadScene("GetActiveScene"+1);
+            }
         }
     }
 }

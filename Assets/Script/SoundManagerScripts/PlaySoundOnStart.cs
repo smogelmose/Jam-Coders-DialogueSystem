@@ -1,13 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PlaySoundOnStart : MonoBehaviour
+namespace Script.SoundManagerScripts
 {
-    [SerializeField] private AudioClip _clip;
-
-    void Start()
+    public class PlaySoundOnStart : MonoBehaviour
     {
-        SoundManager.instance.PlaySound(_clip);
+        [SerializeField] private AudioClip _clip;
+
+        void Start()
+        {
+            SoundManager.instance.PlaySound(_clip);
+        }
     }
 }
