@@ -61,7 +61,7 @@ namespace CodeJamImprovements.DialogueSystem.Scripts
 
                 WriteIntoFile(response.AudioStream); // Write the synthesized speech to a file.
 
-                using var www = UnityWebRequestMultimedia.GetAudioClip("file://" + Path.Combine(Application.temporaryCachePath, "audio.mp3"), AudioType.MPEG);
+                using var www = UnityWebRequestMultimedia.GetAudioClip("file://" + Path.Combine(Application.temporaryCachePath, "audio.mp3"), AudioType.MPEG); // Create a Unity web request to download the synthesized speech.
                 var op = www.SendWebRequest(); // Download the synthesized speech.
 
                 while (!op.isDone) await Task.Yield(); // Wait for the audio clip to finish downloading.
@@ -77,8 +77,8 @@ namespace CodeJamImprovements.DialogueSystem.Scripts
 
         private void WriteIntoFile(Stream stream)
         {
-            using var fileStream = new FileStream(Path.Combine(Application.temporaryCachePath, "audio.mp3"), FileMode.Create);
-            byte[] buffer = new byte[8 * 1024]; // 8K buffer
+            using var fileStream = new FileStream(Path.Combine(Application.temporaryCachePath, "audio.mp3"), FileMode.Create); // Create a file stream to write the synthesized speech to a file.
+            byte[] buffer = new byte[8 * 1024]; // 8K buffer.
 
             int bytesRead;
 
