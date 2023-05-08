@@ -1,9 +1,12 @@
 using UnityEngine;
 
-public class DebugLogPersistentDataPath : MonoBehaviour
+namespace CodeJamImprovements.DialogueSystem.Scripts
 {
-    void Start()
+    public class DebugLogPersistentDataPath : MonoBehaviour
     {
-        Debug.Log(Application.persistentDataPath);
+        void Start()
+        {
+            Debug.Log(Application.persistentDataPath);
+        }
     }
 }
